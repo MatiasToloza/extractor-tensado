@@ -134,13 +134,13 @@ archivos_subidos = st.file_uploader("Sube tus archivos PDF (OPGW, ACAR, etc.)", 
 
 if archivos_subidos:
     if st.button("Ejecutar Extracción", type="primary"):
-        with st.spinner("Buscando bloques INICIAL y detectando unidades (N) en tabla FINAL..."):
+        with st.spinner("Buscando .."):
             df_final = procesar_reporte(archivos_subidos)
             
             if not df_final.empty:
                 df_final.rename(columns={'Columna C Vacia': '', 'Columna F Vacia': ' '}, inplace=True)
                 
-                st.success(f"¡Extracción exitosa! Se encontraron {len(df_final)} estructuras con sus vanos y tensiones.")
+                st.success(f" Se encontraron {len(df_final)}")
                 st.dataframe(df_final) 
                 
                 buffer = io.BytesIO()
@@ -154,4 +154,4 @@ if archivos_subidos:
                     mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
                 )
             else:
-                st.error("No se encontraron datos que coincidan. Revisa si el documento está en formato imagen.")
+                st.error("No se encontraron datos que coincidan.")
