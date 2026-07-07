@@ -4,10 +4,10 @@ import pandas as pd
 import re
 import io
 
-st.set_page_config(page_title="Extractor de Tensado 15°C (Newtons)", layout="wide")
+st.set_page_config(page_title="Prueba", layout="wide")
 
-st.title("⚡ Extractor Definitivo de Datos de Tensado (En Newtons)")
-st.write("Script adaptado a la estructura exacta de los reportes PLS-CADD. Búsqueda inteligente por fila de unidades (N).")
+st.title(".")
+st.write(".")
 
 def is_number(s):
     """Verifica si un string es un número válido (incluso si tiene decimales)"""
